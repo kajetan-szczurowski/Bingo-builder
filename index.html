@@ -7,26 +7,30 @@
 </head>
 <body>
 <main>
+    <img src="headerGraphic.svg"></img>
     <h1>Weselne bingo</h1>
-    <div class = 'subtext'>Wykonuj zadania, odznaczając je. Wykreśl przekątną, wiersz lub kolumnę i zgłoś się do świadków po nagrodę.</div>
+    <div class = 'subtext'>
+        Odznaczaj wykonane zadania. Wykreśl przekątną, wiersz lub kolumnę i zgłoś się do świadków po nagrodę.
+        Przybory do pisania znajdziesz przy księdze gości. Po skończeniu pisania prosimy o odłożenie przyborów na miejsce. 
+    </div>
     
     <section class = 'bingo-grid'>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zatańcz belgijkę lub kontredansa</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zjedz tort weselny</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Weź udział <br/>w konkursie</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Porozmawiaj <br/>z osobą <br/>z sąsiędniego stolika</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Wpisz się i wklej zdjęcie do księgi gości</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Nagraj życzenia dla pary młodej</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Znajdź coś, co nawiązuje do Władcy Pierścieni</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zatańcz z Panną Młodą lub Panem Młodym</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Wypij drinka bezalkoholowego</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Wydrukuj sobie zdjęcie na pamiątkę</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zapisz z tyłu, co najbardziej podoba Ci się na weselu</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Nie uświń się pierwszym daniem &#128022;</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zajrzyj na stronę dianaikajetan.pl</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zatańcz do jednej piosenki na parkiecie</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zrób selfie z Parą Młodą lub świadkami</div></div>
-        <div class = 'bingo-chunk'><div class = 'chunk-text'>W trakcie toastów śpiewaj głośno "sto lat"</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zatańcz belgijkę lub kontredansa.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zjedz tort weselny.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Weź udział <br/>w konkursie.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Porozmawiaj <br/>z osobą <br/>z sąsiędniego stolika.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Wpisz się<br/>i wklej zdjęcie do księgi gości.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Nagraj życzenia dla pary młodej.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Znajdź coś, co nawiązuje do Władcy Pierścieni.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zatańcz<br/>z Panną Młodą lub Panem Młodym.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Wypij drinka bezalkoholowego.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Wydrukuj sobie zdjęcie na pamiątkę.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zapisz z tyłu, co najbardziej podoba Ci się na weselu.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Nie uświń się pierwszym daniem. &#128022;</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zajrzyj na stronę dianaikajetan.pl.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zatańcz do jednej piosenki na parkiecie.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>Zrób selfie<br/>z Parą Młodą lub świadkami.</div></div>
+        <div class = 'bingo-chunk'><div class = 'chunk-text'>W trakcie toastów śpiewaj głośno "sto lat".</div></div>
 
     </section>
 
@@ -38,6 +42,11 @@
         font-family: 'Lekhana';
     }
 
+    img{
+        width: 406px;
+        height: auto;
+    }
+
     main{
         display: flex;
         flex-direction: column;
@@ -46,22 +55,24 @@
 
     h1{
         font-weight: normal;
-        font-size: 150px;
-        margin-bottom: 53px;
+        font-size: 72px;
+        margin-bottom: 22px;
         padding-bottom: 0;
+        margin-top: 0;
     }
 
     .subtext{
-        font-size: 48px;
-        margin-bottom: 72px;
-        width: 1486px;
+        font-size: 16px;
+        margin-bottom: 36px;
+        width: 400px;
         text-align: center;
+        text-wrap:balance;
     }
 
     .bingo-chunk{
-        width: 369px;
-        height: 310px;
-        font-size: 40px;
+        width: 100px;
+        height: 100px;
+        font-size: 14px;
         border: 1px black solid;
         display: flex;
         align-items: center;
@@ -76,7 +87,7 @@
     }
 
     .chunk-text{
-        width: 250px;
+        width: 80px;
         text-align: center;
     }
 
