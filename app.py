@@ -19,6 +19,9 @@ def compile_entries_lines_into_array(entries_lines):
         entries_array.append(line.replace('\n',''))
     return entries_array
 
+def insert_new_html_title(html_string, new_title):
+    return html_string.replace('<title>Document</title>', f"<title>{new_title}</title>")
+
 def get_bingo_entries(path = 'sources/entries.txt'):
     return compile_entries_lines_into_array(get_file_content_as_array(path))
 
@@ -29,10 +32,13 @@ def generate_bingo_html_file(entries_array, html_starting_part, html_ending_part
     html_file += html_ending_part
     return html_file
 
-def generate_standard_bingo_html_file(entries_array):
+def generate_standard_bingo_html_file(entries_array, new_title = None):
     ENTRY_INTRO_TEXT = "<div class = 'bingo-chunk'><div class = 'chunk-text'>"
     ENTRY_OUTRO_TEXT = "</div></div>"
-    HTML_INTRO = get_file_content_as_string('sources/intro.html')
+    if new_title:
+        HTML_INTRO = insert_new_html_title(get_file_content_as_string('sources/intro.html'), new_title)
+    else:    
+        HTML_INTRO = get_file_content_as_string('sources/intro.html')
     HTML_OUTRO = get_file_content_as_string('sources/outro.html')
     return generate_bingo_html_file(entries_array, HTML_INTRO, HTML_OUTRO, ENTRY_INTRO_TEXT, ENTRY_OUTRO_TEXT)
 
@@ -60,7 +66,8 @@ def generate_unique_bingos(count, BASE_LIST, export_folder_name = None):
         list_of_taken.append(entries.copy())
         dones_count += 1
         if (export_folder_name):
-            save_file(export_folder_name + '/bingo_' + str(dones_count) + '.html', generate_standard_bingo_html_file(encode_entries_indexes_array(entries, BASE_LIST)))
+            new_name = f"bingo{dones_count}"
+            save_file(f"{export_folder_name}/{new_name}.html", generate_standard_bingo_html_file(encode_entries_indexes_array(entries, BASE_LIST), new_name))
         print('created '+ str(dones_count) + '/' + str(count) + ' bingos.')
 
 def is_entries_array_unique(current_array, list_of_taken):
